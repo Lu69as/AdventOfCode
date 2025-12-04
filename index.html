@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advent of code - Lu69as</title>
+</head>
+<body>
+    <textarea rows="3" id="inputFieldAOC" placeholder="Input field"></textarea>
+    <div class="btns">
+        <button id="day1" onclick="secretEntrance()">Day 1: Secret Entrance</button>
+        <button id="day2" onclick="">Day 2: Secret Entrance</button>
+        <button id="day3" onclick="">Day 3: Secret Entrance</button>
+    </div>
+    <span id="consoleOutput">Output shows here</span>
+
+    <style>
+        html { overflow: hidden; }
+        body {
+            position: relative;
+            top: 0;
+            height: 100vh;
+            background: linear-gradient(115deg, #9bb3dd, #617291);
+            padding: 40px 80px;
+        }
+        body #embedim--snow { z-index: -1; }
+        body #consoleOutput::before { 
+            content: ">";
+            font-weight: 900;
+            margin-right: 12px;
+        }
+        body #consoleOutput {
+            width: 100vw;
+            padding: 20px 80px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            
+            font-family: monospace;
+            font-size: 16px;
+            background: #eee8;
+            backdrop-filter: blur(6px);
+            border-top: solid 1px #666;
+        }
+
+        body #inputFieldAOC, .btns button {
+            height: fit-content;
+            font-size: 18px;
+            font-family: monospace;
+            font-weight: 600;
+            border-radius: 14px;
+
+            background: #fff3;
+            backdrop-filter: blur(6px);
+            border: solid 1px;
+            box-shadow: 0px 8px;
+            outline: none !important;
+        }
+
+        body #inputFieldAOC {
+            width: calc(100% - 60px);
+            padding: 15px 30px;
+            margin-bottom: 45px;
+            font-weight: 500;
+            border-color: #ab0b80;
+            box-shadow: 0px 8px #ab0b80;
+        }
+        
+        .btns {
+            display: grid;
+            gap: 20px 40px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .btns button:nth-child(3n + 1) { box-shadow: -8px 8px; }
+        .btns button:nth-child(3n) { box-shadow: 8px 8px; }
+        .btns button span { color: #222; }
+        .btns button {
+            transition: 300ms;
+            padding: 15px;
+            cursor: pointer;
+        }
+        .btns button:hover { 
+            background: #fff2;
+            box-shadow: 0 0 0 2px;
+        }
+    </style>
+
+    <script>
+        let adventClrs = ["#165B33", "#a01d3f", "#b98e4e", "#ab0b80", "#F8B229"];
+        let clrIndex = 0;
+
+        document.querySelectorAll(".btns button").forEach((e) => {
+            e.style.color = adventClrs[clrIndex];
+            e.innerHTML = `<span>${e.innerText}</span>`;
+            clrIndex++;
+            if (clrIndex >= adventClrs.length) clrIndex = 0;
+        })
+    </script>
+
+    <script src="./script.js"></script>
+    <script src="https://app.embed.im/snow.js" defer></script>
+</body>
+</html>
