@@ -7,10 +7,7 @@
 </head>
 <body>
     <textarea rows="3" id="inputFieldAOC" placeholder="Input field"></textarea>
-    <div class="btns">
-        <button id="day1part1" onclick="secretEntrancePart1()">Day 1: Secret Entrance - Part 1</button>
-        <button id="day1part2" onclick="secretEntrancePart2()">Day 1: Secret Entrance - Part 2</button>
-    </div>
+    <div class="btns"></div>
     <span id="consoleOutput">Output shows here</span>
 
     <style>
@@ -83,19 +80,6 @@
             box-shadow: 0 0 0 2px;
         }
     </style>
-
-    <script>
-        let adventClrs = ["#165B33", "#a01d3f", "#b98e4e", "#ab0b80", "#F8B229"];
-        let clrIndex = 0;
-
-        document.querySelectorAll(".btns button").forEach((e) => {
-            e.style.color = adventClrs[clrIndex];
-            e.innerHTML = `<span>${e.innerText}</span>`;
-            clrIndex++;
-            if (clrIndex >= adventClrs.length) clrIndex = 0;
-        })
-    </script>
-
     <script src="./script.js"></script>
     <script src="https://app.embed.im/snow.js" defer></script>
 </body>
